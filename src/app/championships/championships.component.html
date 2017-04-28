@@ -1,0 +1,61 @@
+<div *ngIf="championshipList | async as championships; else loading">
+  <div class="row">
+    <div class="col-6">
+      <h3 class="mb-4">Championships</h3>
+      <id-name [idNames]="championships" link="championship"></id-name>
+    </div>
+    <div class="col-6">
+      <h3>Add new championship</h3>
+      <form class="pt-2" ngNativeValidate #csForm="ngForm"
+            (ngSubmit)="addNewChampionship(name.value, description.value, startDate.value, endDate.value)">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" #name required>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" #description required>
+        </div>
+
+        <div class="form-group">
+          <label>Start date</label>
+          <input type="date" class="form-control" #startDate required>
+        </div>
+
+        <div class="form-group">
+          <label>End date</label>
+          <input type="date" class="form-control" #endDate required>
+        </div>
+
+        <div class="form-group" *ngIf="seasonList | async as seasons">
+          <label>Season</label>
+          <select class="form-control" #season [(ngModel)]="seasonid" name="season" required>
+            <option *ngFor="let season of seasons" [value]="season.id">{{season.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group" *ngIf="seriaList | async as serias">
+          <label>Seria</label>
+          <select class="form-control" #seria [(ngModel)]="seriaid" name="seria" required>
+            <option *ngFor="let seria of serias" [value]="seria.id">{{seria.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group" *ngIf="conditionList | async as conditions">
+          <label>Conditions</label>
+          <select class="form-control" #condition [(ngModel)]="conditionid" name="condition" required>
+            <option *ngFor="let condition of conditions" [value]="condition.id">{{condition.name}}</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary w-100 mt-2" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  Loading...
+</ng-template>
+
+

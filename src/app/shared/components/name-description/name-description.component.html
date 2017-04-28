@@ -1,0 +1,9 @@
+<div *ngIf="list | async as items; else loading">
+  <h3 class="pb-2 text-center">{{component}}</h3>
+  <single-name-description *ngFor="let item of items" [nameDescription]="item"></single-name-description>
+</div>
+<ng-template #loading>
+  Loading...
+</ng-template>
+
+

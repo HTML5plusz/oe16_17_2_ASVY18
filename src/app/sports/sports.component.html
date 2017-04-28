@@ -1,0 +1,14 @@
+<div *ngIf="sportsList | async as sports; else loading">
+  <div class="row">
+    <div class="col-6 text-center">
+    <h3 class="mb-4">Sports</h3>
+      <id-name [idNames]="sports" link="sport"></id-name>
+    </div>
+    <div class="col-6">
+      <add-name-description component="Sport" (onSubmit)="addNewSport($event)"></add-name-description>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  Loading...
+</ng-template>

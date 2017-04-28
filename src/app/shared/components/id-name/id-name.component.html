@@ -1,0 +1,4 @@
+<div class="list-group">
+  <a *ngFor="let idName of idNames" [routerLink]="['/' + link, idName.id]"
+     class="list-group-item list-group-item-action">{{idName?.name}}</a>
+</div>

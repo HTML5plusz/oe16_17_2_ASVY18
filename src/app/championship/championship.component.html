@@ -1,0 +1,53 @@
+<div *ngIf="championship | async as championship; else loading">
+  <div class="row pb-4">
+    <div class="col">
+      <single-name-description title="Championship"
+                               [nameDescription]="{name: championship?.name, description: championship?.description}"></single-name-description>
+    </div>
+    <div class="col">
+      <h3 class="pb-4">Details</h3>
+      <h6 class="pb-4">Start date: {{championship?.startDate}}</h6>
+      <h6>End date: {{championship?.endDate}}</h6>
+    </div>
+  </div>
+
+  <div class="row pb-4">
+    <div class="col">
+      <single-name-description title="Seria"
+                               [nameDescription]="{name: championship.seria?.name, description: championship.seria?.description}"></single-name-description>
+    </div>
+
+    <div class="col">
+      <single-name-description title="Season"
+                               [nameDescription]="{name: championship.season?.name, description: championship.season?.description}"></single-name-description>
+    </div>
+  </div>
+
+  <div class="row pb-4">
+    <div class="col">
+      <h3>Events</h3>
+      <div class="pb-3" *ngFor="let event of championship?.event">
+
+
+        <div class="w-75 mx-auto">
+          <h6 class="text-center">Name</h6>
+          <single-name-description
+            [nameDescription]="{name: event.sport?.name, description: event.sport?.description}"></single-name-description>
+        </div>
+        <div class="pt-4 mx-auto w-50" *ngIf="!(event.sport?.specialization.length == 0)">
+
+          <h6 class="text-center">Specializations:</h6>
+          <div *ngFor="let specialization of event.sport?.specialization">
+            <single-name-description
+              [nameDescription]="{name: specialization?.name, description: specialization?.description}"></single-name-description>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  Loading...
+</ng-template>
+
