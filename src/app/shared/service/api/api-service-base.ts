@@ -25,6 +25,8 @@ export abstract class ApiServiceBase {
     return this.http
       .get(`${this.BASE_URL}${endpoint}/${id}`, this.requestOptions)
       .map(response => <T>response.json())
+      .publishReplay(1)
+      .refCount()
       .catch(this.handleError);
   }
 
@@ -41,6 +43,8 @@ export abstract class ApiServiceBase {
          &offset=${offset}
          &limit=${limit}`, this.requestOptions)
       .map(response => <Pager<T>>response.json())
+      .publishReplay(1)
+      .refCount()
       .catch(this.handleError);
   }
 
@@ -48,6 +52,8 @@ export abstract class ApiServiceBase {
     return this.http
       .get(this.BASE_URL + endpoint, this.requestOptions)
       .map(response => <T>response.json())
+      .publishReplay(1)
+      .refCount()
       .catch(this.handleError);
   }
 
@@ -55,6 +61,8 @@ export abstract class ApiServiceBase {
     return this.http
       .post(this.BASE_URL + endpoint, JSON.stringify(body), this.requestOptions)
       .map(resp => <Message>resp.json())
+      .publishReplay(1)
+      .refCount()
       .catch(this.handleError);
   }
 
