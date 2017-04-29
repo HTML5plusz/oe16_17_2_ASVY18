@@ -29,18 +29,21 @@
       <div class="pb-3" *ngFor="let event of championship?.event">
 
 
-        <div class="w-75 mx-auto">
-          <h6 class="text-center">Name</h6>
-          <single-name-description
-            [nameDescription]="{name: event.sport?.name, description: event.sport?.description}"></single-name-description>
-        </div>
-        <div class="pt-4 mx-auto w-50" *ngIf="!(event.sport?.specialization.length == 0)">
-
-          <h6 class="text-center">Specializations:</h6>
-          <div *ngFor="let specialization of event.sport?.specialization">
+        <div class="row pb-5" id="event">
+          <div class="col align-self-center">
+            <h6 class="text-center">Name</h6>
             <single-name-description
-              [nameDescription]="{name: specialization?.name, description: specialization?.description}"></single-name-description>
+              [nameDescription]="{name: event.sport?.name, description: event.sport?.description}"></single-name-description>
           </div>
+          <div class="col" *ngIf="!(event.sport?.specialization.length == 0)">
+
+            <h6 class="text-center">Specializations:</h6>
+            <div *ngFor="let specialization of event.sport?.specialization">
+              <single-name-description
+                [nameDescription]="{name: specialization?.name, description: specialization?.description}"></single-name-description>
+            </div>
+          </div>
+
 
         </div>
       </div>

@@ -3,9 +3,11 @@
   <div class="card-header">
     {{nameDescription?.name}}
   </div>
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      {{nameDescription?.description}}
-    </blockquote>
+  <div *ngIf="nameDescription?.description">
+    <div class="card-block">
+      <blockquote class="card-blockquote">
+        {{nameDescription?.description}}
+      </blockquote>
+    </div>
   </div>
 </div>
