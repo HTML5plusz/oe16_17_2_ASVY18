@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {ConditionTypeApiService} from '../shared/service/api/condition-type-api-service';
 import {Observable} from 'rxjs';
+
+import {ConditionTypeApiService} from '../shared/service/api/condition-type-api-service';
 import {ConditionType} from '../shared/model/condition-type';
 import {NameDescription} from '../shared/model/name-description';
 
 @Component({
-  selector: 'condition-types',
   templateUrl: './condition-types.component.html',
-  styleUrls: ['./condition-types.component.css']
 })
 export class ConditionTypesComponent implements OnInit {
   public conditionTypeList: Observable<ConditionType[]>;

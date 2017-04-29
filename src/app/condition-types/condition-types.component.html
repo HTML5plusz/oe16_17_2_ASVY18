@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-6">
-    <name-description [list]="conditionTypeList" [component]="componentName" (onSubmit)="addNewCondition($event)"></name-description>
+    <name-description [list]="conditionTypeList" [component]="componentName"
+                      (onSubmit)="addNewCondition($event)"></name-description>
   </div>
   <div class="col-6">
     <add-name-description [component]="componentName" (onSubmit)="addNewCondition($event)"></add-name-description>

@@ -38,7 +38,7 @@ export class SeriaApiService extends ApiServiceBase {
     return this.getAll<IdName[]>(this.GET_ALL_SERIA_ID_NAME);
   }
 
-  public saveSeria(name: string, description: string): Observable<Message>{
+  public saveSeria(name: string, description: string): Observable<Message> {
     return this.post(this.POST_SAVE_SERIA, {name: name, description: description});
   }
 }

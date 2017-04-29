@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {RouterModule} from'@angular/router';
+import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {IdNameComponent} from './shared/components/id-name/id-name.component';
@@ -23,7 +23,7 @@ import {SportsComponent} from './sports/sports.component';
 import {SportsApiService} from './shared/service/api/sports-api-service';
 import {AddNameDescriptionComponent} from './shared/components/add-name-description/add-name-description.component';
 import {SportsSpecializationApiService} from './shared/service/api/sports-specialization-api-service';
-import { SingleNameDescriptionComponent } from './shared/components/single-name-description/single-name-description.component';
+import {SingleNameDescriptionComponent} from './shared/components/single-name-description/single-name-description.component';
 
 @NgModule({
   declarations: [

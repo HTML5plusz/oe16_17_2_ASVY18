@@ -5,7 +5,6 @@ import {NameDescription} from '../../model/name-description';
 @Component({
   selector: 'add-name-description',
   templateUrl: './add-name-description.component.html',
-  styleUrls: ['./add-name-description.component.css']
 })
 export class AddNameDescriptionComponent {
   @Input() component: string;

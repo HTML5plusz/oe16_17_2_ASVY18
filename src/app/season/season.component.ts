@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {SeasonApiService} from '../shared/service/api/season-api-service';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
+
+import {SeasonApiService} from '../shared/service/api/season-api-service';
 import {Season} from '../shared/model/season';
 import {NameDescription} from '../shared/model/name-description';
 
 @Component({
   templateUrl: './season.component.html',
-  styleUrls: ['./season.component.css']
 })
 export class SeasonComponent implements OnInit {
   public seasonList: Observable<Season[]>;

@@ -1,18 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
+
 import {ChampionshipsApiService} from '../shared/service/api/championships-api-service';
 import {IdName} from '../shared/model/id-name';
-import {Season} from '../shared/model/season';
 import {SeasonApiService} from '../shared/service/api/season-api-service';
 import {SeriaApiService} from '../shared/service/api/seria-api-service';
 import {ConditionsApiService} from '../shared/service/api/conditions-api-service';
-import {Seria} from '../shared/model/seria';
-import {Condition} from '../shared/model/condition';
 
 @Component({
   selector: 'app-championships',
   templateUrl: './championships.component.html',
-  styleUrls: ['./championships.component.css']
 })
 export class ChampionshipsComponent implements OnInit {
   public championshipList: Observable<IdName[]>;

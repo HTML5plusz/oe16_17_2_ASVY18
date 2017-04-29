@@ -7,9 +7,7 @@ import {Observable, Subscription} from 'rxjs/Rx';
 import {NameDescription} from '../shared/model/name-description';
 
 @Component({
-  selector: 'championship',
   templateUrl: './championship.component.html',
-  styleUrls: ['./championship.component.css']
 })
 export class ChampionshipComponent implements OnInit {
   public championship: Observable<Championship>;
@@ -26,7 +24,7 @@ export class ChampionshipComponent implements OnInit {
     this.subscription = this.route.params
       .subscribe(params => {
         this.id = +params['id'];
-      })
+      });
 
     this.championship = this.api
       .getChampionshipById(this.id);

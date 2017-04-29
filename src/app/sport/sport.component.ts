@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable, Subscription} from 'rxjs/Rx';
+import {ActivatedRoute} from '@angular/router';
+
 import {Sport} from '../shared/model/sport';
 import {SportsApiService} from '../shared/service/api/sports-api-service';
-import {ActivatedRoute} from '@angular/router';
 import {IdName} from '../shared/model/id-name';
 import {SportsSpecializationApiService} from '../shared/service/api/sports-specialization-api-service';
 import {NameDescription} from '../shared/model/name-description';
 
 @Component({
   templateUrl: './sport.component.html',
-  styleUrls: ['./sport.component.css']
 })
 export class SportComponent implements OnInit {
   private subscription: Subscription;
@@ -27,7 +27,7 @@ export class SportComponent implements OnInit {
     this.subscription = this.route.params
       .subscribe(params => {
         id = +params['id'];
-      })
+      });
 
     this.sportsApi
       .getSportById(id)

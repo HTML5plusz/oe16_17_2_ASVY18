@@ -7,7 +7,6 @@ import {NameDescription} from '../shared/model/name-description';
 
 @Component({
   templateUrl: './sports.component.html',
-  styleUrls: ['./sports.component.css']
 })
 export class SportsComponent implements OnInit {
   public sportsList: Observable<IdName[]>;

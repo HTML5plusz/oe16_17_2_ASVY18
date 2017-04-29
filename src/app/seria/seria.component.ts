@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {SeriaApiService} from '../shared/service/api/seria-api-service';
 import {Observable} from 'rxjs';
+
+import {SeriaApiService} from '../shared/service/api/seria-api-service';
 import {Seria} from '../shared/model/seria';
 import {NameDescription} from '../shared/model/name-description';
 
 @Component({
   templateUrl: './seria.component.html',
-  styleUrls: ['./seria.component.css']
 })
 export class SeriaComponent implements OnInit {
   public seriaList: Observable<Seria[]>;
